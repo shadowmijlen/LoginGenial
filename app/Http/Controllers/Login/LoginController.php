@@ -11,7 +11,7 @@ class LoginController extends Controller
 {
     use AuthenticatesUsers;
 
-    protected $redirecTo = RouteServiceProvider::HOME;
+    protected $redirectTo = RouteServiceProvider::HOME;
 
     public function __construct()
     {
@@ -25,7 +25,7 @@ class LoginController extends Controller
 
     public function clave()
     {
-        
+        return view('Login.Clave.index');
     }
 
     public function recuperar()
@@ -55,11 +55,11 @@ class LoginController extends Controller
     {
          if(session()->get('perfil_id') == 1){
  
-             return view('Administrador.Dashboard.index');
+             return view('Perfil1.Dashboard.index');
  
          }else if(session()->get('perfil_id') == 2){
              
-             return view('Trabajador.Dashboard.index');
+             return view('Perfil2.Dashboard.index');
          }
     }
     

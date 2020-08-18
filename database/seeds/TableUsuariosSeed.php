@@ -14,14 +14,14 @@ class TableUsuariosSeed extends Seeder
         $usuarios = [
             [
                 'perfil_id' => 1,
-                'usuario' => 'administrador',
+                'usuario' => 'usuario1',
                 'password' => bcrypt('secret'),
                 'correo' => 'administrador@dominio.com',
                 'flestado' => TRUE,
             ],
             [
                 'perfil_id' => 2,
-                'usuario' => 'trabajador',
+                'usuario' => 'usuario2',
                 'password' => bcrypt('secret'),
                 'correo' => 'agente@dominio.com',
                 'flestado' => TRUE,

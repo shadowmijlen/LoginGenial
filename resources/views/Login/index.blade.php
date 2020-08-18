@@ -5,7 +5,7 @@
 @endsection
 
 @section('titulo')
-    Login | Agente Seguro
+    Login Genial
 @endsection
 
 @section('header')

@@ -12,8 +12,8 @@ class TablePerfilesSeed extends Seeder
     public function run()
     {
         $perfiles = [
-            'Administrador',
-            'Trabajador'
+            'Perfil1',
+            'Perfil2'
         ];
 
         foreach ($perfiles as $valor){
