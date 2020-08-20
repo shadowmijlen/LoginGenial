@@ -28,9 +28,18 @@ class LoginController extends Controller
         return view('Login.Clave.index');
     }
 
-    public function recuperar()
+    public function recuperar(Request $request)
     {
+        $correo = $request->correo;
+        $usuario = Usuario::where('correo', '=', $correo)->get()[0];
         
+        $pre = md5(md5(env('RECUPERAR')));
+        $pro = substr(str_shuffle($pre), 0, 10);
+        $usuario->password = bcrypt($pro);
+        $usuario->update();
+
+
+        return redirect('/')->withErrors(['status' => 'Credenciales enviadas, revisa tu correo.']);;
     }
 
     protected function authenticated(Request $request, $user)

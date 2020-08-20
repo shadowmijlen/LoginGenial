@@ -1,1 +1,1 @@
-@extends('Templates.header')
+@extends('Perfil2.Templates.header')

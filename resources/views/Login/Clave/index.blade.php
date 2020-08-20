@@ -1,21 +1,21 @@
-@extends('Login.template')
+@extends('Login.Clave.template')
 
 @section('head')
-    @include('Templates.head')
+    @include('Login.Templates.head')
 @endsection
 
 @section('titulo')
-    Login | Agente Seguro
+    Recuperar Clave | Login Genial
 @endsection
 
 @section('header')
-    @include('Login.header')
+    @include('Login.Clave.header')
 @endsection
 
 @section('content')
-    @include('Login.content')
+    @include('Login.Clave.content')
 @endsection
 
 @section('footer')
-    @include('Login.footer')
+    @include('Login.Clave.footer')
 @endsection

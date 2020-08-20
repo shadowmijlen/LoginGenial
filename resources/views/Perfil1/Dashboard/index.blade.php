@@ -1,7 +1,7 @@
 @extends('Perfil1.Dashboard.template')
 
 @section('head')
-    @include('Templates.head')
+    @include('Perfil1.Templates.head')
 @endsection
 
 @section('titulo')

@@ -1,7 +1,7 @@
 @extends('Login.template')
 
 @section('head')
-    @include('Templates.head')
+    @include('Login.Templates.head')
 @endsection
 
 @section('titulo')

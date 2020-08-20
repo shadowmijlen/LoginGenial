@@ -1,1 +1,1 @@
-@extends('Templates.footer')
+@extends('Login.Templates.footer')
