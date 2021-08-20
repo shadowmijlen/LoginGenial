@@ -19,7 +19,7 @@ Route::group(['namespace' => 'Login'], function () {
     Route::get('/', 'LoginController@index')->name('login');
 
     #Validar credenciales
-    Route::post('/validar', 'LoginController@login')->name('validar');
+    Route::post('/login', 'LoginController@login')->name('validar');
 
     #Vista Recuperar Contraseña
     Route::get('/clave', 'LoginController@clave')->name('clave');

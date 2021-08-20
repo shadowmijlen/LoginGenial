@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Login;
 
 use App\Http\Controllers\Controller;
+use App\Models\Usuario;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
@@ -32,7 +33,7 @@ class LoginController extends Controller
     {
         $correo = $request->correo;
         $usuario = Usuario::where('correo', '=', $correo)->get()[0];
-        
+
         $pre = md5(md5(env('RECUPERAR')));
         $pro = substr(str_shuffle($pre), 0, 10);
         $usuario->password = bcrypt($pro);
@@ -43,11 +44,11 @@ class LoginController extends Controller
     }
 
     protected function authenticated(Request $request, $user)
-    {   
+    {
         if ($user->flestado == 1) {
- 
+
             $user->setSession($user);
- 
+
         } else {
             $this->guard()->logout();
             $request->session()->invalidate();
@@ -58,19 +59,19 @@ class LoginController extends Controller
     public function username()
     {
         return 'usuario';
-    }     
- 
+    }
+
     public function bienvenido()
     {
          if(session()->get('perfil_id') == 1){
- 
+
              return view('Perfil1.Dashboard.index');
- 
+
          }else if(session()->get('perfil_id') == 2){
-             
+
              return view('Perfil2.Dashboard.index');
          }
     }
-    
+
 }
 
